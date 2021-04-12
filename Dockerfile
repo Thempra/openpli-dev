@@ -15,6 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
 RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
 
 RUN adduser --disabled-password --gecos "" openpli
+RUN ln -s /usr/bin/cython /usr/local/bin/cython
 RUN mkdir /openpli
 
 WORKDIR /openpli
